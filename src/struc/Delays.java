@@ -4,13 +4,13 @@ package struc;
 public class Delays {
 	
 	//int_delays
- 	private static int int_delay;
+ 	private int int_delay;
 	//add_delays
-	private static int add_delay;
+	private int add_delay;
 	//mul_delays
-	private static int mul_delay;
+	private int mul_delay;
 	//mem_delays
-	private static int mem_delay;
+	private int mem_delay;
 		
 
 
@@ -24,19 +24,19 @@ public class Delays {
 	}
 
 	
-	public static int getIntDelay() {
+	public int getIntDelay() {
 		return int_delay;
 	}
 
-	public static int getAddDelay() {
+	public int getAddDelay() {
 		return add_delay;
 	}
 
-	public static int getMulDelay() {
+	public int getMulDelay() {
 		return mul_delay;
 	}
 
-	public static int getMemDelay() {
+	public int getMemDelay() {
 		return mem_delay;
 	}
 

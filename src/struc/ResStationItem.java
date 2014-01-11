@@ -1,22 +1,19 @@
 package struc;
 
-public class ResStationItem <T extends Comparable<T>> implements Comparable<T> {
+public class ResStationItem <T> implements Comparable<T> {
 	
  	private final String Name;
- 	private static boolean Busy;
- 	private int Op;
+ 	private boolean Busy;
+ 	public Operation op;
  	private T VI;
  	private T VK;
  	private ResStationItem<T> QI;
  	private ResStationItem<T> QK;
- 	private int execAtCycle;
-	private IComputable<T> Comput;
-
+ 	public int execAtCycle;
 	
  	
-	public ResStationItem(String name, IComputable<T> comput) {
+	public ResStationItem(String name) {
 		this.Name = name;
-		this.Comput = comput;
 	}
 	
 
@@ -25,28 +22,53 @@ public class ResStationItem <T extends Comparable<T>> implements Comparable<T> {
 	}
 	
 	
-	public static boolean getBusy() {
+	public boolean getBusy() {
 		return Busy;
 	}
 	
-	public int getOp() {
-		return Op;
+	public void setBusy(boolean busy) {
+		Busy = busy;
+	}
+	
+	public Operation getOp() {
+		return op;
+	}
+	
+	public void setOp(Operation _op) {
+		 op = _op;
 	}
 	
 	public T getVi() {
 		return VI;
 	}
 	
+	public void setVi(T vi) {
+		VI = vi;
+	}
+	
 	public T getVk() {
 		return VK;
+	}
+	
+	public void setVk(T vk) {
+		VK = vk;
 	}
 	
 	public ResStationItem<T> getQi() {
 		return QI;
 	}
 	
+	public void setQi(ResStationItem<T> qi) {
+		QI = qi;
+	}
+	
 	public ResStationItem<T> getQk() {
 		return QK;
+	}
+	
+
+	public void setQk(ResStationItem<T> qk) {
+		QK = qk;
 	}
 	
 	
@@ -56,7 +78,8 @@ public class ResStationItem <T extends Comparable<T>> implements Comparable<T> {
 		QI = null;
 		QK = null;
 		Busy = false;
-		execAtCycle = Op = 0;
+		execAtCycle = 0;
+		op = null;
 	}
 
 

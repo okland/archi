@@ -2,12 +2,12 @@ package struc;
 
 import java.util.ArrayList;
 
-public class ResStation<T extends Comparable<T>> extends ArrayList<ResStationItem<T>> {
+public class ResStation<T> extends ArrayList<ResStationItem<T>> {
 
 	
-	public ResStation(int stationsNum, String Name, IComputable<T> computable) {
+	public ResStation(int stationsNum, String Name) {
 		for (int i = 1; i <= stationsNum; i++) {
-			add(i - 1, new ResStationItem<T>(Name + i, computable));
+			add(i - 1, new ResStationItem<T>(Name + i));
 		}
 	}
 	
